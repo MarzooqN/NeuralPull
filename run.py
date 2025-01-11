@@ -183,7 +183,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataname', type=str, default='gargoyle')
     args = parser.parse_args()
 
-    torch.cuda.set_device(args.gpu)
+    # torch.cuda.set_device(args.gpu)
     runner = Runner(args, args.conf, args.mode)
 
     if args.mode == 'train':
