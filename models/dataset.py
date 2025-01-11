@@ -72,7 +72,7 @@ def process_data(data_dir, dataname):
 class DatasetNP:
     def __init__(self, conf, dataname):
         super(DatasetNP, self).__init__()
-        self.device = torch.device('cpu')
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.conf = conf
 
         self.data_dir = conf.get_string('data_dir')
