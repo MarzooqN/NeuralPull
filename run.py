@@ -21,7 +21,7 @@ warnings.filterwarnings("ignore")
 
 class Runner:
     def __init__(self, args, conf_path, mode='train'):
-        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        self.device = torch.device('cuda')
 
         # Configuration
         self.conf_path = conf_path
@@ -173,7 +173,7 @@ class Runner:
 
 if __name__ == '__main__':
     # Default tensor type set to CPU
-    torch.set_default_tensor_type('torch.FloatTensor')
+    torch.set_default_tensor_type('torch.cuda.FloatTensor')
     parser = argparse.ArgumentParser()
     parser.add_argument('--conf', type=str, default='./confs/np_srb.conf')
     parser.add_argument('--mode', type=str, default='train')
