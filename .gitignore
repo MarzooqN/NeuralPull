@@ -1,0 +1,5 @@
+venv
+outs
+img
+.vscode
+__pycache__
