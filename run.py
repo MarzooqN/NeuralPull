@@ -102,7 +102,7 @@ class Runner:
         os.makedirs(os.path.join(self.base_exp_dir, 'outputs'), exist_ok=True)
         mesh = self.extract_geometry(bound_min, bound_max, resolution=resolution, threshold=threshold, query_func=lambda pts: -self.sdf_network.sdf(pts))
 
-        mesh.export(os.path.join(self.base_exp_dir, 'outputs', '{:0>8d}_{}.obj'.format(self.iter_step, str(threshold))))
+        mesh.export(os.path.join(self.base_exp_dir, 'outputs', '{}_{:0>8d}_{}.obj'.format(self.dataname, self.iter_step, str(threshold))))
 
     def update_learning_rate_np(self, iter_step):
         warn_up = self.warm_up_end
